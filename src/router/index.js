@@ -9,6 +9,7 @@ import ArtistsShow from "../views/ArtistsShow.vue";
 import EventsIndex from "../views/EventsIndex.vue";
 import EventsShow from "../views/EventsShow.vue";
 import CategoriesIndex from "../views/CategoriesIndex.vue";
+import CategoriesShow from "../views/CategoriesShow.vue";
 
 Vue.use(VueRouter);
 
@@ -66,6 +67,11 @@ const routes = [
     path: "/categories",
     name: "categories-index",
     component: CategoriesIndex,
+  },
+  {
+    path: "/categories/:id",
+    name: "categories-show",
+    component: CategoriesShow,
   },
 ];
 
