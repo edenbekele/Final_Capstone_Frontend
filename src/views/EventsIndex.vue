@@ -1,15 +1,35 @@
 <template>
 <div class="events-index">
   <div class="container">
-    <h1>Events</h1>
-    <div v-for="event in events">
-      <h2>{{ event.name }}</h2>
-  
-      <a v-bind:href="`/events/${event.id}`">More Info</a>
-      <br>
-      <br>
+  <section v-for="event in events" class="page-section">
+      <div class="container">
+        <div class="product-item">
+          <div class="product-item-title d-flex">
+            <div class="bg-faded p-5 d-flex mr-auto rounded">
+              <h2 class="section-heading mb-0">
+                <span class="section-heading-lower">{{ event.name }}</span>
+              </h2>
+            </div>
+          </div>
+          <img
+            class="product-item-img mx-auto d-flex rounded img-fluid mb-3 mb-lg-0"
+            src="img/products-02.jpg"
+            alt=""
+          />
+          <div class="product-item-description d-flex ml-auto">
+            <div class="bg-faded p-5 rounded">
+              <p class="mb-0">
+                {{ event.description }}
+              </p>
+              <br>
+                <a v-bind:href="`/events/${event.id}`">More Info</a>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
     </div>
-  </div>
 </div>
 </template>
 

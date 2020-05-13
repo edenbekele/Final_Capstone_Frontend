@@ -59,16 +59,6 @@
         </div>
       </div>
     </section>
-
-    <div class="container">
-      <h1>Artists</h1>
-      <div v-for="artist in artists">
-        <h2>{{ artist.name }}</h2>
-        <a v-bind:href="`/artists/${artist.id}`">More Info</a>
-        <br />
-        <br />
-      </div>
-    </div>
   </div>
 </template>
 
