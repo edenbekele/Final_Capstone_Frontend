@@ -12,7 +12,7 @@
           </div>
           <img
             class="product-item-img mx-auto d-flex rounded img-fluid mb-3 mb-lg-0"
-            src="img/products-02.jpg"
+            v-bind:src="event.image"
             alt=""
           />
           <div class="product-item-description d-flex ml-auto">
