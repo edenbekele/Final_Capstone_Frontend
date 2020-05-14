@@ -2,17 +2,30 @@
   <div>
     <h1>{{ category.name }}</h1>
     <br />
-    <div v-for="artist in category.artists">
-      <h2>{{ artist.name }}</h2>
-      <br />
-      <h4>{{ artist.image }}</h4>
-      <br />
-      <h4>{{ artist.description }}</h4>
-      <br />
-      <a v-bind:href="`/artists/${artist.id}`">View More</a>
-    </div>
-    <br />
-    <a v-bind:href="`/categories`">Back to all categories</a>
+
+    <section v-for="artist in category.artists" class="page-section clearfix">
+      <div class="container">
+        <div class="intro">
+          <img class="intro-img img-fluid mb-3 mb-lg-0 rounded" v-bind:src="`/img/${artist.image}`" alt="" />
+          <div class="intro-text left-0 text-center bg-faded p-5 rounded">
+            <h2 class="section-heading mb-4">
+              <span class="section-heading-upper">Category?</span>
+              <span class="section-heading-lower">{{ artist.name }}</span>
+            </h2>
+            <p class="mb-3">
+              {{ artist.description }}
+            </p>
+            <br>
+            <div class="intro-button mx-auto">
+              <a class="btn btn-primary btn-xl" v-bind:href="`/artists/${artist.id}`">More Info</a>
+              <br>
+              <br>
+              <a class="btn btn-primary btn-xl" v-bind:href="`/categories`">Back to all categories</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   </div>
 </template>
 

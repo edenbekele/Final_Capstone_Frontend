@@ -3,7 +3,7 @@
     <section v-for="category in categories" class="page-section clearfix">
       <div class="container">
         <div class="intro">
-          <img class="intro-img img-fluid mb-3 mb-lg-0 rounded" v-bind:src="category.image" alt="" />
+          <img class="intro-img img-fluid mb-3 mb-lg-0 rounded" v-bind:src="`/img/${category.image}`" alt="" />
           <div class="intro-text left-0 text-center bg-faded p-5 rounded">
             <h2 class="section-heading mb-4">
               <!-- <span class="section-heading-upper">Fresh Coffee</span> -->

@@ -44,7 +44,7 @@
           </div>
           <img
             class="product-item-img mx-auto d-flex rounded img-fluid mb-3 mb-lg-0"
-            src="img/products-01.jpg"
+            v-bind:src="`/img/${artist.image}`"
             alt=""
           />
           <div class="product-item-description d-flex mr-auto">
