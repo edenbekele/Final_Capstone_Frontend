@@ -17,8 +17,8 @@
                   {{ artist.bio }}
                 </p>
                 <br />
-               <button v-on:click="favoriteArtist(artist)" v-if="!artist.favorited">Favorite</button>
-               <button v-on:click="unfavoriteArtist(artist)" v-if="artist.favorited">Unfavorite</button>
+               <button v-on:click="favoriteArtist(artist)" v-if="!artist.favorited">☆</button>
+               <button v-on:click="unfavoriteArtist(artist)" v-if="artist.favorited">★</button>
               </div>
             </div>
           </div>
