@@ -8,7 +8,6 @@
             <div class="col-xl-9 col-lg-10 mx-auto">
               <div class="bg-faded rounded p-5">
                 <h2 class="section-heading mb-4">
-                  <span class="section-heading-upper">Category?</span>
                   <span class="section-heading-lower">About {{ artist.name }}</span>
                 </h2>
                 <p>
@@ -18,8 +17,8 @@
                   {{ artist.bio }}
                 </p>
                 <br />
-               <button v-on:click="favoriteArtist(artist)" v-if="!artist.favorite">Favorite</button>
-               <button v-on:click="unfavoriteArtist(artist)" v-if="artist.favorite">Unfavorite</button>
+               <button v-on:click="favoriteArtist(artist)" v-if="!artist.favorited">Favorite</button>
+               <button v-on:click="unfavoriteArtist(artist)" v-if="artist.favorited">Unfavorite</button>
               </div>
             </div>
           </div>
@@ -51,22 +50,24 @@ export default {
     },
     favoriteArtist: function(artist) {
       var params = {
-        id: artist.id,
-        name: artist.name,
-        description: artist.description,
-        bio: artist.bio,
-        image: artist.image,
+        artist_id: artist.id,
       };
-      axios.post("api/favorited_artists", params).then(response => {
-        console.log("Favorite an artist: ", response);
-        this.artist.favorite = true;
-      });
+      axios
+        .post("api/favorited_artists", params)
+        .then(response => {
+          console.log("Favorite an artist: ", response);
+          this.artist.favorited = true;
+        })
+        .catch(error => console.log(error.response));
     },
     unfavoriteArtist: function(artist) {
-      axios.delete("api/unfavorite/" + artist.id).then(response => {
-        console.log("Unfavorite an artist: ", response);
-        this.artist.favorite = false;
-      });
+      axios
+        .delete("api/unfavorite/" + artist.id)
+        .then(response => {
+          console.log("Unfavorite an artist: ", response);
+          this.artist.favorited = false;
+        })
+        .catch(error => console.log(error.response));
     },
   },
 };

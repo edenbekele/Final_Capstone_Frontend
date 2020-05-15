@@ -77,6 +77,8 @@ Vue.use(VCalendar, {
 
 export default {
   data: function() {
+    // do a .map loop to go through events
+    var eventDates = [];
     return {
       events: [],
       attributes: [
@@ -86,7 +88,7 @@ export default {
           popover: {
             label: "You just hovered over today's date!",
           },
-          dates: new Date(),
+          dates: [new Date(), new Date("6/13/2020")],
         },
       ],
     };
