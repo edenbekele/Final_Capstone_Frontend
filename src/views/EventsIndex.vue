@@ -20,14 +20,14 @@
         <div class="container">
           <div class="product-item">
             <div class="product-item-title d-flex">
-              <div class="bg-faded p-5 d-flex mr-auto rounded">
+              <div class="bg-faded p-4 d-flex mr-auto rounded">
                 <h2 class="section-heading mb-0">
                   <span class="section-heading-lower">{{ event.name }}</span>
                 </h2>
               </div>
             </div>
             <img
-              class="product-item-img mx-auto d-flex rounded img-fluid mb-3 mb-lg-0"
+              class="product-item-img mx-auto d-flex rounded img-fluid mb-3 mb-lg-5"
               v-bind:src="event.image"
               alt=""
             />
@@ -43,13 +43,13 @@
           </div>
         </div>
       </section>
-      <br>
-      <br>
-          <!-- MAP -->
+      <br />
+      <br />
+      <!-- MAP -->
       <center>
         <div id="map"></div>
       </center>
-      <br>
+      <br />
     </div>
   </div>
 </template>
@@ -64,7 +64,6 @@ body {
   width: 500px;
 }
 </style>
-
 
 <script>
 import axios from "axios";

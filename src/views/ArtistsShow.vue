@@ -3,10 +3,22 @@
     <section class="page-section about-heading">
       <div class="container">
         <img class="img-fluid rounded about-heading-img mb-3 mb-lg-0" v-bind:src="`/img/${artist.image}`" alt="" />
+
+        <!-- <center>
+          <div v-for="artist in artists" v-if="artist.category_id === 5" class="bg-faded p-5 d-flex ml-auto rounded">
+            <h2 class="section-heading mb-0">
+              <mini-audio v-bind:src="`/img/${artist.image}`"></mini-audio>
+            </h2>
+          </div>
+        </center> -->
+        <br />
+        <br />
+
         <div class="about-heading-content">
           <div class="row">
             <div class="col-xl-9 col-lg-10 mx-auto">
               <div class="bg-faded rounded p-5">
+                <br />
                 <h2 class="section-heading mb-4">
                   <span class="section-heading-lower">About {{ artist.name }}</span>
                 </h2>
@@ -17,8 +29,8 @@
                   {{ artist.bio }}
                 </p>
                 <br />
-               <button v-on:click="favoriteArtist(artist)" v-if="!artist.favorited">☆</button>
-               <button v-on:click="unfavoriteArtist(artist)" v-if="artist.favorited">★</button>
+                <button v-on:click="favoriteArtist(artist)" v-if="!artist.favorited">☆</button>
+                <button v-on:click="unfavoriteArtist(artist)" v-if="artist.favorited">★</button>
               </div>
             </div>
           </div>
@@ -30,11 +42,16 @@
 
 <script>
 import axios from "axios";
+import Vue from "vue";
+import VueAudio from "vue-audio-better";
+
+Vue.use(VueAudio);
 
 export default {
   data: function() {
     return {
       artist: {},
+      artists: [],
     };
   },
 
@@ -73,7 +90,5 @@ export default {
 };
 </script>
 
-
-// web request to get fav artists & artist.fav to true & auto refresh 
-// delete request to back end to unfav artist
-// artist.fav need ot be set to true or false
+// web request to get fav artists & artist.fav to true & auto refresh // delete request to back end to unfav artist //
+artist.fav need ot be set to true or false
