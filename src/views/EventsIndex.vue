@@ -16,7 +16,18 @@
           is-inline
         />
       </center>
-      <section v-for="event in events" class="page-section">
+      <section
+        data-aos="fade"
+        data-aos-offset="200"
+        data-aos-delay="50"
+        data-aos-duration="1000"
+        data-aos-easing="ease-in-out"
+        data-aos-mirror="true"
+        data-aos-once="false"
+        data-aos-anchor-placement="top-center"
+        v-for="event in events"
+        class="page-section"
+      >
         <div class="container">
           <div class="product-item">
             <div class="product-item-title d-flex">

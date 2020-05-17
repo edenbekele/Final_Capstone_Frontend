@@ -55,7 +55,7 @@
             </li>
            
             <li class="nav-item px-lg-4">
-              <a class="nav-link text-uppercase text-expanded" href="/favorited_artists">★</a>
+              <a class="nav-link text-uppercase text-expanded" href="/users/:id">★</a>
             </li>
           </ul>
         </div>

@@ -2,7 +2,6 @@
   <div>
     <h1>{{ category.name }}</h1>
     <br />
-
     <section v-for="artist in category.artists" class="page-section clearfix">
       <div class="container">
         <div class="intro">
@@ -15,11 +14,11 @@
             <p class="mb-3">
               {{ artist.description }}
             </p>
-            <br>
+            <br />
             <div class="intro-button mx-auto">
               <a class="btn btn-primary btn-xl" v-bind:href="`/artists/${artist.id}`">More Info</a>
-              <br>
-              <br>
+              <br />
+              <br />
               <a class="btn btn-primary btn-xl" v-bind:href="`/categories`">Back to all categories</a>
             </div>
           </div>

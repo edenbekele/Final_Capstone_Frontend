@@ -3,7 +3,17 @@
     <br />
     <br />
     <br />
-    <section class="page-section">
+    <section
+      data-aos="fade"
+      data-aos-offset="200"
+      data-aos-delay="50"
+      data-aos-duration="1000"
+      data-aos-easing="ease-in-out"
+      data-aos-mirror="true"
+      data-aos-once="false"
+      data-aos-anchor-placement="top-center"
+      class="page-section"
+    >
       <div class="container">
         <div class="product-item">
           <div class="product-item-title d-flex">
@@ -31,7 +41,18 @@
         </div>
       </div>
     </section>
-    <section v-for="artist in artists" class="page-section">
+    <section
+      data-aos="fade"
+      data-aos-offset="200"
+      data-aos-delay="50"
+      data-aos-duration="1000"
+      data-aos-easing="ease-in-out"
+      data-aos-mirror="true"
+      data-aos-once="false"
+      data-aos-anchor-placement="top-center"
+      v-for="artist in artists"
+      class="page-section"
+    >
       <div class="container">
         <div class="product-item">
           <div class="product-item-title d-flex">

@@ -1,6 +1,17 @@
 <template>
   <div class="categories-index">
-    <section v-for="category in categories" class="page-section clearfix">
+    <section
+      data-aos="fade"
+      data-aos-offset="200"
+      data-aos-delay="50"
+      data-aos-duration="1000"
+      data-aos-easing="ease-in-out"
+      data-aos-mirror="true"
+      data-aos-once="false"
+      data-aos-anchor-placement="top-center"
+      v-for="category in categories"
+      class="page-section clearfix"
+    >
       <div class="container">
         <div class="intro">
           <img class="intro-img img-fluid mb-3 mb-lg-0 rounded" v-bind:src="`/img/${category.image}`" alt="" />
@@ -14,7 +25,9 @@
               it, our coffee will be a blissful addition to your everyday morning routine - we guarantee it!
             </p> -->
             <div class="intro-button mx-auto">
-              <a class="btn btn-primary btn-xl" v-bind:href="`/categories/${category.id}`">View artists in category</a>
+              <a class="btn btn-primary btn-xl" v-bind:href="`/categories/${category.id}`">
+                View artists in category
+              </a>
             </div>
           </div>
         </div>
