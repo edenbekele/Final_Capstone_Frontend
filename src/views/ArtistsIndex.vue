@@ -73,7 +73,7 @@
               <p class="mb-0">
                 {{ artist.description }}
                 <br />
-                <a v-bind:href="`/artists/${artist.id}`">More Info</a>
+                <a class="btn btn-primary btn-xl" v-bind:href="`/artists/${artist.id}`">More Info</a>
               </p>
             </div>
           </div>

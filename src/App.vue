@@ -50,12 +50,13 @@
             <li v-if="!jwt" class="nav-item px-lg-4">
               <a class="nav-link text-uppercase text-expanded" href="/login">Login</a>
             </li>
-            <li v-if="jwt" class="nav-item px-lg-4">
-              <a class="nav-link text-uppercase text-expanded" href="/logout">Logout</a>
-            </li>
-           
+
             <li class="nav-item px-lg-4">
               <a class="nav-link text-uppercase text-expanded" href="/users/:id">★</a>
+            </li>
+
+            <li v-if="jwt" class="nav-item px-lg-4">
+              <a class="nav-link text-uppercase text-expanded" href="/logout">Logout</a>
             </li>
           </ul>
         </div>

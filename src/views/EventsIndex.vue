@@ -48,7 +48,7 @@
                   {{ event.description }}
                 </p>
                 <br />
-                <a v-bind:href="`/events/${event.id}`">More Info</a>
+                <a class="btn btn-primary btn-xl" v-bind:href="`/events/${event.id}`">More Info</a>
               </div>
             </div>
           </div>
@@ -89,6 +89,7 @@ export default {
   data: function() {
     // do a .map loop to go through events
     var eventDates = [];
+
     return {
       events: [],
       attributes: [
@@ -96,9 +97,9 @@ export default {
           key: "today",
           highlight: true,
           popover: {
-            label: "You just hovered over today's date!",
+            label: "Gallery Opening",
           },
-          dates: [new Date(), new Date("6/13/2020")],
+          dates: [new Date(), new Date("5/29/2020"), new Date("6/13/2020"), new Date("6/26/2020")],
         },
       ],
     };
@@ -116,6 +117,7 @@ export default {
       zoom: 9, // starting zoom
     });
 
+    // Add the geocoder to the map
     map.addControl(
       new MapboxGeocoder({
         accessToken: mapboxgl.accessToken,
@@ -123,7 +125,7 @@ export default {
       })
     );
 
-    var popup = new mapboxgl.Popup({ offset: 25 }).setText("Construction on the Washington Monument began in 1848.");
+    var popup = new mapboxgl.Popup({ offset: 25 }).setText("Actualize Bootcamp");
     var marker = new mapboxgl.Marker()
       .setLngLat([-87.6298, 41.8781])
       .setPopup(popup)

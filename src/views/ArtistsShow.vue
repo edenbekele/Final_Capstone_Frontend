@@ -2,34 +2,28 @@
   <div class="artist-show">
     <section class="page-section about-heading">
       <div class="container">
-        <!-- <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-        <div class="carousel-inner">
-           <div class="carousel-item active">
-             <img v-bind:src="`/img/${artist.image}`" class="d-block w-100" alt="...">
-           </div>
-           <div class="carousel-item">
-             <img sv-bind:src="`/img/${artist.image}`" class="d-block w-100" alt="...">
-           </div>
-           <div class="carousel-item">
-             <img v-bind:src="`/img/${artist.image}`" class="d-block w-100" alt="...">
-           </div>
-         </div>
-         <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-         <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-         <span class="sr-only">Next</span>
-       </a>
-    </div> -->
-        <center>
+        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+          <div class="carousel-inner">
+            <div v-for="image in artist.images" class="carousel-item active">
+              <img v-bind:src="`/img/${image.image}`" class="d-block w-100" alt="..." />
+            </div>
+          </div>
+          <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+        <!-- <center>
           <div class="bg-faded p-5 d-flex ml-auto rounded">
             <h2 class="section-heading mb-0">
-              <mini-audio v-bind:src="`/img/${artist.image}`"></mini-audio>
+              <mini-audio v-show="artist.category_id === 5" v-bind:src="`/img/${artist.image}`"></mini-audio>
             </h2>
           </div>
-        </center>
+        </center> -->
         <br />
         <br />
 
@@ -71,6 +65,7 @@ export default {
     return {
       artist: {},
       artists: [],
+      image: {},
     };
   },
 
