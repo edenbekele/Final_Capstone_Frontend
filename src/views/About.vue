@@ -6,10 +6,10 @@
         <div class="col-xl-9 mx-auto">
           <div class="cta-inner text-center rounded">
             <h2 class="section-heading mb-4">
-              <span class="section-heading-upper">Our Promise</span>
+              <span class="section-heading-upper"></span>
               <span class="section-heading-lower">To You</span>
             </h2>
-            <p class="mb-0">When you walk into our shop to start your day, we are dedicated to providing you with friendly service, a welcoming atmosphere, and above all else, excellent products made with the highest quality ingredients. If you are not satisfied, please let us know and we will do whatever we can to make things right!</p>
+            <p class="mb-0">This website is a space for women of color artists to display thie cretivity and make their voices hear. The intention is to create a platform that is a resource center to discover new artists and events that feature WOC, wether it be a well-established artist or someone who just wanted a space to express themselves. Through this site, artists and fans alike can discover, connect, and explore.</p>
           </div>
         </div>
       </div>
@@ -17,3 +17,18 @@
   </section>
   </div>
 </template>
+
+<style>
+.page-section {
+  height: 21em;
+  width: 40em;
+
+  padding-top: 0em;
+  padding-left: 15em;
+  padding-right: 20em;
+}
+.cta-inner {
+  height: 20em;
+  width: 40em;
+}
+</style>

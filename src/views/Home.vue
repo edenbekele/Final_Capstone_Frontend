@@ -1,22 +1,17 @@
 <template>
   <div class="home">
-    <h1>{{ message }}</h1>
-
     <section class="page-section clearfix">
       <div class="container">
         <div class="intro">
-          <img class="intro-img img-fluid mb-3 mb-lg-0 rounded" src="img/intro.jpg" alt="" />
+          <img class="intro-img img-fluid mb-3 mb-lg-0 rounded" src="img/Homepage.png" alt="" />
           <div class="intro-text left-0 text-center bg-faded p-5 rounded">
             <h2 class="section-heading mb-4">
-              <span class="section-heading-upper">Fresh Coffee</span>
-              <span class="section-heading-lower">Worth Drinking</span>
+              <!-- <span class="section-heading-upper">Fresh Coffee</span> -->
+              <span class="section-heading-lower">Discover artists and events in your area</span>
             </h2>
-            <p class="mb-3">
-              Every cup of our quality artisan coffee starts with locally sourced, hand picked ingredients. Once you try
-              it, our coffee will be a blissful addition to your everyday morning routine - we guarantee it!
-            </p>
             <div class="intro-button mx-auto">
-              <a class="btn btn-primary btn-xl" href="#">Visit Us Today!</a>
+              <a class="btn btn-primary btn-xl" v-bind:href="`/artists`">ARTISTS</a>
+              <a class="btn btn-primary btn-xl" v-bind:href="`/events`">EVENTS</a>
             </div>
           </div>
         </div>
@@ -25,7 +20,16 @@
   </div>
 </template>
 
-<style></style>
+<style>
+.btn {
+  margin-right: 0.5em;
+}
+.intro {
+  height: 30em;
+  width: 60em;
+  position: center;
+}
+</style>
 
 <script>
 export default {

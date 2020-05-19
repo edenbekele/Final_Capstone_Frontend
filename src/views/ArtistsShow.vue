@@ -45,6 +45,7 @@
                 <br />
                 <button v-on:click="favoriteArtist(artist)" v-if="!artist.favorited">☆</button>
                 <button v-on:click="unfavoriteArtist(artist)" v-if="artist.favorited">★</button>
+                <link rel="stylesheet" href="artist.instagram"> 
               </div>
             </div>
           </div>

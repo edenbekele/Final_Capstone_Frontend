@@ -74,6 +74,10 @@ body {
   height: 500px;
   width: 500px;
 }
+.product-item-img {
+  height: 40em;
+  width: 40em;
+}
 </style>
 
 <script>

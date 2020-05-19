@@ -4,7 +4,7 @@
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-business-casual/blob/master/LICENSE)
  */
 body {
-  font-family: Lora;
+  font-family: Raleway;
   background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url(../img/plants.jpg);
   background-attachment: fixed;
   background-position: center;
@@ -90,10 +90,11 @@ p {
 .btn-xl {
   font-weight: 700;
   font-size: 0.8rem;
-  padding-top: 1.5rem;
-  padding-bottom: 1.5rem;
-  padding-left: 2rem;
-  padding-right: 2rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  margin-bottom: 1rem;
 }
 .intro {
   position: relative;
@@ -113,7 +114,7 @@ p {
     width: 100%;
     left: 0;
     position: absolute;
-    bottom: -2rem;
+    bottom: 0rem;
   }
 }
 @media (min-width: 1200px) {
@@ -124,7 +125,7 @@ p {
 .cta {
   padding-top: 5rem;
   padding-bottom: 5rem;
-  background-color: rgba(230, 167, 86, 0.9);
+  /* background-color: #e6a756; */
 }
 .cta .cta-inner {
   position: relative;
