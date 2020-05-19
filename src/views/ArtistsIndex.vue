@@ -85,13 +85,13 @@
 </template>
 
 <style>
-/* HEADING BOX */
+/* HEADER BOX */
 .bg-faded {
   color: rgb(65, 62, 62);
 }
 .product-item-img {
-  width: 50em;
-  height: 45em;
+  height: 40em;
+  width: 40em;
 }
 </style>
 

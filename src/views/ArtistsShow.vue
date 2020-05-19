@@ -2,7 +2,8 @@
   <div class="artist-show">
     <section class="page-section about-heading">
       <div class="container">
-        <div id="carouselExampleControls" class="carousel slide">
+        <center>
+          <div id="carouselExampleControls" class="carousel slide">
           <div class="carousel-inner">
             <div v-for="(image, idx) in artist.images" class="carousel-item" :class="{ active: idx==0 }">
               <img v-bind:src="`/img/${image.image}`" class="d-block w-100" alt="..." />
@@ -17,13 +18,13 @@
             <span class="sr-only">Next</span>
           </a>
         </div>
-        <center>
-          <div class="bg-faded p-5 d-flex ml-auto rounded">
-            <h2 class="section-heading mb-0">
-              <mini-audio v-show="artist.category_id === 5" v-bind:src="`/img/${artist.image}`"></mini-audio>
-            </h2>
-          </div>
         </center>
+          <div v-for="song in artist.songs" class="song-container">
+              <div class="song-name">
+                <h4>{{song.name}}</h4>
+                <mini-audio class="mini-audio" v-bind:src="`/img/${song.file}`"></mini-audio>
+              </div>
+          </div>
         <br />
         <br />
 
@@ -52,6 +53,29 @@
     </section>
   </div>
 </template>
+
+<style>
+.carousel-inner {
+  height: 40em;
+  width: 40em;
+}
+.carousel-item {
+  height: 40em;
+  width: 40em;
+}
+.song-container {
+  height: 15em;
+  width: 40em;
+  padding-top: 50px;
+  padding-right: 30px;
+  padding-bottom: 50px;
+  padding-left: 400px;
+}
+h4 {
+  text-align: center;
+  padding-left: 100px;
+}
+</style>
 
 <script>
 import axios from "axios";

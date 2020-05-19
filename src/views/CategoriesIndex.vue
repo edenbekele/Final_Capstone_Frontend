@@ -21,7 +21,7 @@
             </h2>
             <div class="intro-button mx-auto">
               <a class="btn btn-primary btn-xl" v-bind:href="`/categories/${category.id}`">
-                View artists in category
+                View Artists
               </a>
             </div>
           </div>
@@ -32,6 +32,10 @@
 </template>
 
 <style>
+.intro-img {
+  height: 40em;
+  width: 40em;
+}
 </style>
 
 <script>
