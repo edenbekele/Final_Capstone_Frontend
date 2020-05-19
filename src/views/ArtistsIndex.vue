@@ -84,7 +84,16 @@
   </div>
 </template>
 
-<style></style>
+<style>
+/* HEADING BOX */
+.bg-faded {
+  color: rgb(65, 62, 62);
+}
+.product-item-img {
+  width: 50em;
+  height: 45em;
+}
+</style>
 
 <script>
 import axios from "axios";

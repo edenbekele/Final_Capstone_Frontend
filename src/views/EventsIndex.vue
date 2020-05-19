@@ -92,6 +92,10 @@ export default {
 
     return {
       events: [],
+      locations: [
+        { address: "215 W Ohio St, Chicago, IL", description: "Actualize Coding Bootcamp" },
+        { address: "Navy Pier", description: "A touristy amusement park" },
+      ],
       attributes: [
         {
           key: "today",
@@ -110,26 +114,34 @@ export default {
 
   mounted: function() {
     mapboxgl.accessToken = "pk.eyJ1IjoiZWJla2VsZSIsImEiOiJja2E2MmtwdmgwM2loMnFudzN5ZXo3azVuIn0.kN1OfXN-5MgNqpiTNGsvYQ";
+    var mapboxClient = mapboxSdk({
+      accessToken: mapboxgl.accessToken,
+    });
     var map = new mapboxgl.Map({
       container: "map", // container id
       style: "mapbox://styles/mapbox/dark-v10", // stylesheet location
       center: [-87.6298, 41.8781], // starting position [lng, lat]
       zoom: 9, // starting zoom
     });
-
-    // Add the geocoder to the map
-    map.addControl(
-      new MapboxGeocoder({
-        accessToken: mapboxgl.accessToken,
-        mapboxgl: mapboxgl,
-      })
-    );
-
-    var popup = new mapboxgl.Popup({ offset: 25 }).setText("Actualize Bootcamp");
-    var marker = new mapboxgl.Marker()
-      .setLngLat([-87.6298, 41.8781])
-      .setPopup(popup)
-      .addTo(map);
+    this.locations.forEach(location => {
+      mapboxClient.geocoding
+        .forwardGeocode({
+          query: location.address,
+          autocomplete: false,
+          limit: 1,
+        })
+        .send()
+        .then(function(response) {
+          if (response && response.body && response.body.features && response.body.features.length) {
+            var feature = response.body.features[0];
+            var popup = new mapboxgl.Popup({ offset: 25 }).setText(location.description);
+            var marker = new mapboxgl.Marker()
+              .setLngLat(feature.center)
+              .setPopup(popup)
+              .addTo(map);
+          }
+        });
+    });
   },
 
   methods: {

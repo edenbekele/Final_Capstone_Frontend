@@ -17,13 +17,13 @@
             <span class="sr-only">Next</span>
           </a>
         </div>
-        <!-- <center>
+        <center>
           <div class="bg-faded p-5 d-flex ml-auto rounded">
             <h2 class="section-heading mb-0">
               <mini-audio v-show="artist.category_id === 5" v-bind:src="`/img/${artist.image}`"></mini-audio>
             </h2>
           </div>
-        </center> -->
+        </center>
         <br />
         <br />
 
