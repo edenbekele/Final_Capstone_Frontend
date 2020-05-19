@@ -2,9 +2,9 @@
   <div class="artist-show">
     <section class="page-section about-heading">
       <div class="container">
-        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+        <div id="carouselExampleControls" class="carousel slide">
           <div class="carousel-inner">
-            <div v-for="image in artist.images" class="carousel-item active">
+            <div v-for="(image, idx) in artist.images" class="carousel-item" :class="{ active: idx==0 }">
               <img v-bind:src="`/img/${image.image}`" class="d-block w-100" alt="..." />
             </div>
           </div>
@@ -71,6 +71,9 @@ export default {
 
   created: function() {
     this.showArtist();
+  },
+  mounted: function() {
+    $(".carousel").carousel();
   },
   methods: {
     showArtist: function() {
