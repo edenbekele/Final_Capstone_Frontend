@@ -7,6 +7,8 @@
       <!-- CALENDAR -->
       <center>
         <vc-calendar
+          class="calendar"
+          v-if="attributes[0].dates.length > 0"
           :attributes="attributes"
           :min-date="new Date()"
           mode="range"
@@ -15,7 +17,8 @@
           is-dark
           is-inline
         />
-      </center>
+        <div v-else></div>   
+       </center>
       <section
         data-aos="fade"
         data-aos-offset="200"
@@ -31,7 +34,7 @@
         <div class="container">
           <div class="product-item">
             <div class="product-item-title d-flex">
-              <div class="bg-faded p-4 d-flex mr-auto rounded">
+              <div class="bg-faded p-4 d-flex m-auto rounded">
                 <h2 class="section-heading mb-0">
                   <span class="section-heading-lower">{{ event.name }}</span>
                 </h2>
@@ -39,10 +42,10 @@
             </div>
             <img
               class="product-item-img mx-auto d-flex rounded img-fluid mb-3 mb-lg-5"
-              v-bind:src="event.image"
+              v-bind:src="`/img/${event.image}`"
               alt=""
             />
-            <div class="product-item-description d-flex ml-auto">
+            <div class="product-item-description d-flex m-auto">
               <div class="bg-faded p-5 rounded">
                 <p class="mb-0">
                   {{ event.description }}
@@ -66,7 +69,7 @@
 </template>
 
 <style>
-body {
+.events-index body {
   margin: 0;
   padding: 0;
 }
@@ -77,6 +80,10 @@ body {
 .product-item-img {
   height: 40em;
   width: 40em;
+}
+.calendar {
+  height: 17em;
+  width: 28em;
 }
 </style>
 
@@ -91,23 +98,19 @@ Vue.use(VCalendar, {
 
 export default {
   data: function() {
-    // do a .map loop to go through events
     var eventDates = [];
 
     return {
       events: [],
-      locations: [
-        { address: "215 W Ohio St, Chicago, IL", description: "Actualize Coding Bootcamp" },
-        { address: "Navy Pier", description: "A touristy amusement park" },
-      ],
       attributes: [
         {
           key: "today",
           highlight: true,
           popover: {
-            label: "Gallery Opening",
+            label: [],
+            visibility: "hover",
           },
-          dates: [new Date(), new Date("5/29/2020"), new Date("6/13/2020"), new Date("6/26/2020")],
+          dates: [],
         },
       ],
     };
@@ -116,43 +119,45 @@ export default {
     this.indexEvents();
   },
 
-  mounted: function() {
-    mapboxgl.accessToken = "pk.eyJ1IjoiZWJla2VsZSIsImEiOiJja2E2MmtwdmgwM2loMnFudzN5ZXo3azVuIn0.kN1OfXN-5MgNqpiTNGsvYQ";
-    var mapboxClient = mapboxSdk({
-      accessToken: mapboxgl.accessToken,
-    });
-    var map = new mapboxgl.Map({
-      container: "map", // container id
-      style: "mapbox://styles/mapbox/dark-v10", // stylesheet location
-      center: [-87.6298, 41.8781], // starting position [lng, lat]
-      zoom: 9, // starting zoom
-    });
-    this.locations.forEach(location => {
-      mapboxClient.geocoding
-        .forwardGeocode({
-          query: location.address,
-          autocomplete: false,
-          limit: 1,
-        })
-        .send()
-        .then(function(response) {
-          if (response && response.body && response.body.features && response.body.features.length) {
-            var feature = response.body.features[0];
-            var popup = new mapboxgl.Popup({ offset: 25 }).setText(location.description);
-            var marker = new mapboxgl.Marker()
-              .setLngLat(feature.center)
-              .setPopup(popup)
-              .addTo(map);
-          }
-        });
-    });
-  },
+  mounted: function() {},
 
   methods: {
     indexEvents: function() {
       axios.get("/api/events").then(response => {
         console.log("View all events: ", response);
         this.events = response.data;
+        mapboxgl.accessToken =
+          "pk.eyJ1IjoiZWJla2VsZSIsImEiOiJja2E2MmtwdmgwM2loMnFudzN5ZXo3azVuIn0.kN1OfXN-5MgNqpiTNGsvYQ";
+        var mapboxClient = mapboxSdk({
+          accessToken: mapboxgl.accessToken,
+        });
+        var map = new mapboxgl.Map({
+          container: "map", // container id
+          style: "mapbox://styles/mapbox/dark-v10", // stylesheet location
+          center: [-87.6298, 41.8781], // starting position [lng, lat]
+          zoom: 10, // starting zoom
+        });
+        this.events.forEach(event => {
+          mapboxClient.geocoding
+            .forwardGeocode({
+              query: event.location,
+              autocomplete: false,
+              limit: 1,
+            })
+            .send()
+            .then(response => {
+              if (response && response.body && response.body.features && response.body.features.length) {
+                var feature = response.body.features[0];
+                var popup = new mapboxgl.Popup({ offset: 25 }).setText([event.name, event.location]);
+                var marker = new mapboxgl.Marker()
+                  .setLngLat(feature.center)
+                  .setPopup(popup)
+                  .addTo(map);
+              }
+            });
+          this.attributes[0].dates.push(new Date(event.date).toLocaleString("en-US", { timeZone: "America/New_York" }));
+          this.attributes[0].popover.label.push(event.name);
+        });
       });
     },
   },

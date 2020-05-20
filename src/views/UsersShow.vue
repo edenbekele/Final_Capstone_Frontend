@@ -1,9 +1,8 @@
 <template>
+<div class="users-show">
   <div class="container">
-    <br />
-    <br />
     <h1>
-      <strong>{{ user.name }}'s Favorited Artists</strong>
+      {{ user.name }}'s Favorited Artists
     </h1>
     <center>
       <br />
@@ -25,7 +24,19 @@
     </center>
     <br />
   </div>
+  </div>
 </template>
+
+<style>
+.users-show h1 {
+  background-color: rgba(0, 0, 0, 0.65);
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+  text-transform: uppercase;
+  line-height: 1;
+  font-family: "Raleway";
+}
+</style>
 
 <script>
 import axios from "axios";

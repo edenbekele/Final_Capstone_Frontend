@@ -7,9 +7,9 @@
           <div class="intro-text left-0 text-center bg-faded p-5 rounded">
             <h2 class="section-heading mb-4">
               <!-- <span class="section-heading-upper">Fresh Coffee</span> -->
-              <span class="section-heading-lower">Discover artists and events in your area</span>
+              <span class="section-heading-lower mr-auto">Discover artists and events in your area</span>
             </h2>
-            <div class="intro-button mx-auto">
+            <div class="intro-button m-auto">
               <a class="btn btn-primary btn-xl" v-bind:href="`/artists`">ARTISTS</a>
               <a class="btn btn-primary btn-xl" v-bind:href="`/events`">EVENTS</a>
             </div>

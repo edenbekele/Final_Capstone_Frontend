@@ -22,9 +22,10 @@
 .page-section {
   height: 21em;
   width: 40em;
+  color: rgb(65, 62, 62);
 
   padding-top: 0em;
-  padding-left: 15em;
+  padding-left: 24em;
   padding-right: 20em;
 }
 .cta-inner {

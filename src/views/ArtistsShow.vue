@@ -42,10 +42,13 @@
                 <p class="mb-0">
                   {{ artist.bio }}
                 </p>
+                <br>
+                <a class="btn btn-primary btn-xl" v-bind:href="`/artists`">Back to all artists</a>
+
                 <br />
                 <button v-on:click="favoriteArtist(artist)" v-if="!artist.favorited">☆</button>
                 <button v-on:click="unfavoriteArtist(artist)" v-if="artist.favorited">★</button>
-                <link rel="stylesheet" href="artist.instagram"> 
+                <!-- <link rel="stylesheet" href="artist.instagram">  -->
               </div>
             </div>
           </div>
