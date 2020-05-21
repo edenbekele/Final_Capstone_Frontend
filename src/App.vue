@@ -52,7 +52,7 @@
             </li>
 
             <li class="nav-item px-lg-4">
-              <a class="nav-link text-uppercase text-expanded" href="/users/:id">★</a>
+              <a class="nav-link text-uppercase text-expanded" href="/my_artists">★</a>
             </li>
 
             <li v-if="jwt" class="nav-item px-lg-4">

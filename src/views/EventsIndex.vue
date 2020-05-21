@@ -8,7 +8,6 @@
       <center>
         <vc-calendar
           class="calendar"
-          v-if="attributes[0].dates.length > 0"
           :attributes="attributes"
           :min-date="new Date()"
           mode="range"
@@ -17,7 +16,6 @@
           is-dark
           is-inline
         />
-        <div v-else></div>   
        </center>
       <section
         data-aos="fade"
@@ -102,17 +100,7 @@ export default {
 
     return {
       events: [],
-      attributes: [
-        {
-          key: "today",
-          highlight: true,
-          popover: {
-            label: [],
-            visibility: "hover",
-          },
-          dates: [],
-        },
-      ],
+      attributes: [],
     };
   },
   created: function() {
@@ -155,8 +143,15 @@ export default {
                   .addTo(map);
               }
             });
-          this.attributes[0].dates.push(new Date(event.date).toLocaleString("en-US", { timeZone: "America/New_York" }));
-          this.attributes[0].popover.label.push(event.name);
+          this.attributes.push({
+            key: "today",
+            highlight: true,
+            popover: {
+              label: event.name,
+              visibility: "hover",
+            },
+            dates: [new Date(event.date)],
+          });
         });
       });
     },

@@ -1,6 +1,14 @@
 <template>
   <div class="home">
-    <section class="page-section clearfix">
+    <section 
+      data-aos="fade"
+        data-aos-offset="200"
+        data-aos-delay="50"
+        data-aos-duration="1000"
+        data-aos-easing="ease-in-out"
+        data-aos-mirror="true"
+        data-aos-once="false"
+      class="page-section clearfix">
       <div class="container">
         <div class="intro">
           <img class="intro-img img-fluid mb-3 mb-lg-0 rounded" src="img/Homepage.png" alt="" />

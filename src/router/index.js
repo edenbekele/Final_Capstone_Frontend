@@ -75,7 +75,7 @@ const routes = [
     component: CategoriesShow,
   },
   {
-    path: "/users/:id",
+    path: "/my_artists",
     name: "users-show",
     component: UsersShow,
   },

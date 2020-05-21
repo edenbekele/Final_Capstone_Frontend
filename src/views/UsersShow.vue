@@ -1,14 +1,14 @@
 <template>
 <div class="users-show">
   <div class="container">
-    <h1>
+  <h2 v-if="user.name != null">
       {{ user.name }}'s Favorited Artists
-    </h1>
+    </h2>
     <center>
       <br />
       <br />
       <br />
-      <div data-aos="fade-down"
+     <div data-aos="fade-down"
       class="card-columns">
         <div v-for="artist in user.artists" class="card">
           <img v-bind:src="`/img/${artist.image}`" class="card-img-top" alt="..." />
@@ -28,10 +28,15 @@
 </template>
 
 <style>
-.users-show h1 {
+.users-show h2 {
   background-color: rgba(0, 0, 0, 0.65);
-  margin-top: 5rem;
+  margin-top: 1rem;
   margin-bottom: 5rem;
+  margin-right: 23em;
+  margin-left: -5em;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  padding-left: 1em;
   text-transform: uppercase;
   line-height: 1;
   font-family: "Raleway";
@@ -49,11 +54,11 @@ export default {
     };
   },
   created: function() {
-    this.showUser();
+    this.myArtists();
   },
   methods: {
-    showUser: function() {
-      axios.get("/api/users/" + this.$route.params.id).then(response => {
+    myArtists: function() {
+      axios.get("/api/my_artists/").then(response => {
         this.user = response.data;
         console.log(this.user);
       });
