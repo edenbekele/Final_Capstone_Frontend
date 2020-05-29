@@ -6,6 +6,7 @@ import Login from "../views/Login.vue";
 import Logout from "../views/Logout.vue";
 import ArtistsIndex from "../views/ArtistsIndex.vue";
 import ArtistsShow from "../views/ArtistsShow.vue";
+import ArtistsNew from "../views/ArtistsNew.vue";
 import EventsIndex from "../views/EventsIndex.vue";
 import EventsShow from "../views/EventsShow.vue";
 import CategoriesIndex from "../views/CategoriesIndex.vue";
@@ -47,6 +48,11 @@ const routes = [
     path: "/artists",
     name: "artists-index",
     component: ArtistsIndex,
+  },
+  {
+    path: "/artists",
+    name: "artists-new",
+    component: ArtistsNew,
   },
   {
     path: "/artists/:id",
