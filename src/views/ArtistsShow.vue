@@ -49,6 +49,17 @@
                 <button v-on:click="favoriteArtist(artist)" v-if="!artist.favorited">☆</button>
                 <button v-on:click="unfavoriteArtist(artist)" v-if="artist.favorited">★</button>
                 <br>
+                <ul class="icons">
+                  <!-- <div v-show="artist.instagram != null"> -->
+                  <li><a v-bind:href="`${artist.instagram}`"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                  <!-- </div> -->
+                  <li><a v-bind:href="`${artist.website}`">
+                   <i class="fa fa-globe" aria-hidden="true"></i></a>
+                  </li>
+                  <li>
+                   <i class="fa fa-envelope-o" aria-hidden="true"></i>
+                  </li>
+                </ul>
               </div>
             </div>
           </div>
@@ -78,6 +89,20 @@
 h4 {
   text-align: center;
   padding-left: 100px;
+}
+.icons li {
+  list-style: none;
+  margin: 10px 30px;
+  display: inline-block;
+  font-size: 20px;
+  padding: 10px 20px;
+  color: black;
+  transition: 0.5s;
+}
+.icons li:hover {
+  color: grey;
+  border: 1.5px solid grey;
+  transition: 0.5s;
 }
 </style>
 
