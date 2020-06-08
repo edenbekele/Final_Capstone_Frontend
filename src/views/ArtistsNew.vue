@@ -1,7 +1,5 @@
 <template>
-  <div class="signup">
     <div class="container">
-   
     <form v-on:submit.prevent="submit()">
       <h1>New Artist</h1>
       <ul>
@@ -23,11 +21,11 @@
       <label>Image:</label> 
       <input type="text" class="form-control" v-model="image">
     </div>
-      <input type="submit" class="btn btn-primary" value="Submit">
+     <br>
+    <input type="submit" class="btn btn-primary" value="Submit">
 
     </form>
     </div>
-  </div>
 </template>   
 
 <script>

@@ -50,7 +50,7 @@ const routes = [
     component: ArtistsIndex,
   },
   {
-    path: "/artists",
+    path: "/artists/new",
     name: "artists-new",
     component: ArtistsNew,
   },
