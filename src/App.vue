@@ -54,7 +54,7 @@
               <a class="nav-link text-uppercase text-expanded" href="/login">Login</a>
             </li>
 
-            <li class="nav-item px-lg-4">
+            <li v-if="jwt" class="nav-item px-lg-4">
               <a class="nav-link text-uppercase text-expanded" href="/my_artists">★</a>
             </li>
 
