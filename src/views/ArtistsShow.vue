@@ -60,6 +60,9 @@
                    <i class="fa fa-envelope-o" aria-hidden="true"></i>
                   </li>
                 </ul>
+                <br>
+                 <br>
+                <button class="btn btn-primary btn-xl" v-on:click="destroyArtist(artist)">Delete</button> 
               </div>
             </div>
           </div>
@@ -155,6 +158,13 @@ export default {
           this.artist.favorited = false;
         })
         .catch(error => console.log(error.response));
+    },
+
+    destroyArtist: function(artist) {
+      axios.delete("/api/artists/" + artist.id).then(response => {
+        console.log("Successfully deleted!");
+        this.$router.push("/artists");
+      });
     },
   },
 };

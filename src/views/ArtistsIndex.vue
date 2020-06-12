@@ -34,6 +34,7 @@
               <p class="mb-0">{{ artist.description }}</p>
                <br />
                 <a class="btn btn-primary btn-xl" v-bind:href="`/artists/${artist.id}`">More Info</a>
+            
             </div>
           </div>
         </div>
@@ -68,7 +69,7 @@ export default {
   },
   methods: {
     indexArtists: function() {
-      axios.get("/api/artists").then(response => {
+      axios.get("/api/artists/").then(response => {
         console.log("View all artists: ", response);
         this.artists = response.data;
       });
