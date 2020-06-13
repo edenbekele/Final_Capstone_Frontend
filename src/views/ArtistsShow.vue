@@ -34,6 +34,17 @@
               <div class="bg-faded rounded p-5">
                 <br />
                 <h2 class="section-heading mb-4">
+                <center>
+                <ul class="icons">
+                  <li><a v-bind:href="`${artist.instagram}`"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                  <li><a v-bind:href="`${artist.website}`">
+                   <i class="fa fa-globe" aria-hidden="true"></i></a>
+                  </li>
+                  <li>
+                   <i class="fa fa-envelope-o" aria-hidden="true"></i>
+                  </li>
+                </ul>
+                </center>
                   <span class="section-heading-lower">About {{ artist.name }}</span>
                 </h2>
                 <p>
@@ -44,25 +55,13 @@
                 </p>
                 <br>
                 <a class="btn btn-primary btn-xl" v-bind:href="`/artists`">Back to all artists</a>
-
-                <br />
-                <button v-on:click="favoriteArtist(artist)" v-if="!artist.favorited">☆</button>
-                <button v-on:click="unfavoriteArtist(artist)" v-if="artist.favorited">★</button>
-                <br>
-                <ul class="icons">
-                  <!-- <div v-show="artist.instagram != null"> -->
-                  <li><a v-bind:href="`${artist.instagram}`"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-                  <!-- </div> -->
-                  <li><a v-bind:href="`${artist.website}`">
-                   <i class="fa fa-globe" aria-hidden="true"></i></a>
-                  </li>
-                  <li>
-                   <i class="fa fa-envelope-o" aria-hidden="true"></i>
-                  </li>
-                </ul>
-                <br>
-                 <br>
                 <button class="btn btn-primary btn-xl" v-on:click="destroyArtist(artist)">Delete</button> 
+                <br>
+                <br />
+                <button class="favoriteButton" v-on:click="favoriteArtist(artist)" v-if="!artist.favorited">☆</button>
+                <button class="favoriteButton" v-on:click="unfavoriteArtist(artist)" v-if="artist.favorited">★</button>
+                <br>
+                <br>
               </div>
             </div>
           </div>
@@ -106,6 +105,17 @@ h4 {
   color: grey;
   border: 1.5px solid grey;
   transition: 0.5s;
+}
+
+.favoriteButton {
+  margin-left: 1em;
+}
+.favoriteButton:hover {
+  background: #867a69;
+}
+
+.btn {
+  margin-left: 1em;
 }
 </style>
 

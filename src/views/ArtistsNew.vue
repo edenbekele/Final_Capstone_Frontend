@@ -28,7 +28,9 @@
     <div class="form-group">
       <label>Image:</label> 
       <input type="text" class="form-control" v-model="image">
+      <input type="file" @change="onFileSelection">
     </div>
+    <br>
      <br>
     <input type="submit" class="btn btn-primary" value="Submit">
 
@@ -83,6 +85,9 @@ export default {
         .catch(error => {
           this.error = error.response.data.errors;
         });
+    },
+    onFileSelection(event) {
+      console.log(event);
     },
   },
 };
