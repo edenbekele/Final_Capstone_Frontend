@@ -35,6 +35,7 @@
             <li class="nav-item px-lg-4">
               <a class="nav-link text-uppercase text-expanded" href="/about">About</a>
             </li>
+            
             <li class="dropdown nav-item px-lg-4">
               <a class="nav-link text-uppercase text-expanded dropdown-toggle" type="nav-link" id="dropdownMenuButton" data-toggle="dropdown">Artists</a>
               <div class="dropdown-menu text-uppercase text-expanded px-lg-4" aria-labelledby="dropdownMenuButton">
@@ -66,6 +67,7 @@
                   <a class="dropdown-item" href="#">Saved Events</a>
                   <a class="dropdown-item" href="#">Messages</a>
                   <a class="dropdown-item" href="/logout">Logout</a>
+                  <a v-if="user.admin === true" class="dropdown-item" href="/admin">ADMIN</a>
                 </div>
             </li> 
           </ul>

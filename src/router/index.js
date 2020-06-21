@@ -12,6 +12,7 @@ import EventsShow from "../views/EventsShow.vue";
 import CategoriesIndex from "../views/CategoriesIndex.vue";
 import CategoriesShow from "../views/CategoriesShow.vue";
 import UsersShow from "../views/UsersShow.vue";
+import Admin from "../views/Admin.vue";
 
 Vue.use(VueRouter);
 
@@ -84,6 +85,11 @@ const routes = [
     path: "/my_artists",
     name: "users-show",
     component: UsersShow,
+  },
+  {
+    path: "/admin",
+    name: "admin",
+    component: Admin,
   },
 ];
 

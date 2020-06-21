@@ -78,7 +78,7 @@ export default {
       var myVariable = 0;
       console.log(params);
       axios
-        .post("/api/artists", params)
+        .post("/api/admin", params)
         .then(response => {
           this.$router.push("/artists");
         })
