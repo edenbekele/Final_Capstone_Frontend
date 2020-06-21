@@ -23,12 +23,12 @@
     </div>
     <div class="form-group">
       <label>Bio:</label> 
-      <input type="text" class="form-control" v-model="bio">
+      <input type="textarea" class="form-control" v-model="bio">
     </div>
     <div class="form-group">
       <label>Image:</label> 
       <input type="text" class="form-control" v-model="image">
-      <input type="file" @change="onFileSelection">
+      <!-- <input type="file" class="form-control" @change="onFileSelection"> -->
     </div>
     <br>
      <br>
@@ -86,9 +86,9 @@ export default {
           this.error = error.response.data.errors;
         });
     },
-    onFileSelection(event) {
-      console.log(event);
-    },
+    // onFileSelection(event) {
+    //   console.log(event);
+    // },
   },
 };
 </script>
