@@ -1,6 +1,6 @@
 <template>
   <div class="events-show">
-     <section class="page-section">
+    <section class="page-section">
       <div class="container">
         <div class="product-item">
           <div class="product-item-title d-flex">
@@ -19,17 +19,24 @@
             <div class="bg-faded p-5 rounded">
               <p class="mb-0">
                 <center><h3>DETAILS</h3></center>
-                <br>
-                <strong>When:</strong> {{ event.date }}
-                <br>
-                <br>
-               <strong>Where:</strong> {{ event.location }}
-                <br>
-                <br>
+                <br />
+                <strong>When:</strong>
+                {{ event.date }}
+                <br />
+                <br />
+                <strong>Where:</strong>
+                {{ event.location }}
+                <br />
+                <br />
                 {{ event.description }}
               </p>
-              <br>
-              <center><a class="btn btn-primary btn-xl" v-bind:href="`/events`">Back to all events</a></center> 
+              <br />
+              <label class="switch">
+                <input type="checkbox" />
+                <span class="slider round"></span>
+              </label>
+              <br />
+              <center><a class="btn btn-primary btn-xl" v-bind:href="`/events`">Back to all events</a></center>
             </div>
           </div>
         </div>
@@ -37,6 +44,8 @@
     </section>
   </div>
 </template>
+
+<style></style>
 
 <script>
 import axios from "axios";

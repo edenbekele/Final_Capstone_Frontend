@@ -67,7 +67,7 @@
                   <a class="dropdown-item" href="#">Saved Events</a>
                   <a class="dropdown-item" href="#">Messages</a>
                   <a class="dropdown-item" href="/logout">Logout</a>
-                  <a v-if="user.admin === true" class="dropdown-item" href="/admin">ADMIN</a>
+                  <!-- <a v-if="user.admin === true" class="dropdown-item" href="/admin">ADMIN</a> -->
                 </div>
             </li> 
           </ul>
