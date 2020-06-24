@@ -31,7 +31,7 @@
                 {{ event.description }}
               </p>
               <br />
-              <label class="switch">
+              <label class="switch" v-on:click="savedEvent(event)" v-if="!event.saved">
                 <input type="checkbox" />
                 <span class="slider round"></span>
               </label>
@@ -44,8 +44,6 @@
     </section>
   </div>
 </template>
-
-<style></style>
 
 <script>
 import axios from "axios";
