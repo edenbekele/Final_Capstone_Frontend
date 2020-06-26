@@ -86,7 +86,7 @@
                 <a class="dropdown-item" href="#">Saved Events</a>
                 <a class="dropdown-item" href="#">Messages</a>
                 <a class="dropdown-item" href="/logout">Logout</a>
-                <!-- <a v-if="user.admin === true" class="dropdown-item" href="/admin">ADMIN</a> -->
+                <a v-if="user && user.admin === true" class="dropdown-item" href="/admin">ADMIN</a>
               </div>
             </li>
           </ul>
@@ -120,6 +120,11 @@ export default {
   methods: {
     setJwt: function() {
       this.jwt = localStorage.jwt;
+    },
+  },
+  computed: {
+    user: function() {
+      return this.$store.getters.user;
     },
   },
 };

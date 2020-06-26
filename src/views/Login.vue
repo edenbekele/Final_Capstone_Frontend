@@ -1,14 +1,15 @@
 <template>
   <div class="container">
-    <div 
-        data-aos="fade"
-        data-aos-offset="200"
-        data-aos-delay="50"
-        data-aos-duration="1000"
-        data-aos-easing="ease-in-out"
-        data-aos-mirror="true"
-        data-aos-once="false"
-        class="login rounded">
+    <div
+      data-aos="fade"
+      data-aos-offset="200"
+      data-aos-delay="50"
+      data-aos-duration="1000"
+      data-aos-easing="ease-in-out"
+      data-aos-mirror="true"
+      data-aos-once="false"
+      class="login rounded"
+    >
       <form v-on:submit.prevent="submit()">
         <center><h1>LOGIN</h1></center>
         <ul>
@@ -65,6 +66,8 @@ export default {
           axios.defaults.headers.common["Authorization"] = "Bearer" + response.data.jwt;
           localStorage.setItem("jwt", response.data.jwt);
           localStorage.setItem("user_id", response.data.user_id);
+          console.log(response.data);
+          this.$store.dispatch("setUser", response.data);
           this.$parent.setJwt();
           this.$router.push("/");
         })
