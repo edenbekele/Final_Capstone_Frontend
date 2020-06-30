@@ -55,7 +55,7 @@
                 </p>
                 <br>
                 <a class="btn btn-primary btn-xl" v-bind:href="`/artists`">Back to all artists</a>
-                <button class="btn btn-primary btn-xl" v-on:click="destroyArtist(artist)">Delete</button> 
+                <button v-if="user && user.admin === true" class="btn btn-primary btn-xl" v-on:click="destroyArtist(artist)">Delete</button> 
                 <br>
                 <br />
                 <button class="favoriteButton" v-on:click="favoriteArtist(artist)" v-if="!artist.favorited">☆</button>

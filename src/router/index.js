@@ -9,6 +9,7 @@ import ArtistsShow from "../views/ArtistsShow.vue";
 import ArtistsNew from "../views/ArtistsNew.vue";
 import EventsIndex from "../views/EventsIndex.vue";
 import EventsShow from "../views/EventsShow.vue";
+import UsersEvents from "../views/UsersEvents.vue";
 import CategoriesIndex from "../views/CategoriesIndex.vue";
 import CategoriesShow from "../views/CategoriesShow.vue";
 import UsersShow from "../views/UsersShow.vue";
@@ -70,6 +71,11 @@ const routes = [
     path: "/events/:id",
     name: "events-show",
     component: EventsShow,
+  },
+  {
+    path: "/artist_events",
+    name: "users-events",
+    component: UsersEvents,
   },
   {
     path: "/categories",

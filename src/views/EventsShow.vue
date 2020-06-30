@@ -63,6 +63,18 @@ export default {
         this.event = response.data;
       });
     },
+    savedEvent: function(event) {
+      var params = {
+        event_id: event.id,
+      };
+      axios
+        .post("api/artist_events", params)
+        .then(response => {
+          console.log("Event has been saved: ", response);
+          this.event.saved = true;
+        })
+        .catch(error => console.log(error.response));
+    },
   },
 };
 </script>

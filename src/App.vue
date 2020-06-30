@@ -83,7 +83,7 @@
               </a>
               <div class="dropdown-menu text-uppercase text-expanded px-lg-4" aria-labelledby="dropdownMenuButton">
                 <a class="dropdown-item" href="/my_artists">★ Artists</a>
-                <a class="dropdown-item" href="#">Saved Events</a>
+                <a class="dropdown-item" href="/artist_events">Saved Events</a>
                 <a class="dropdown-item" href="#">Messages</a>
                 <a class="dropdown-item" href="/logout">Logout</a>
                 <a v-if="user && user.admin === true" class="dropdown-item" href="/admin">ADMIN</a>
