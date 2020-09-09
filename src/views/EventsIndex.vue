@@ -16,7 +16,7 @@
           is-dark
           is-inline
         />
-       </center>
+      </center>
       <section
         data-aos="fade"
         data-aos-offset="200"

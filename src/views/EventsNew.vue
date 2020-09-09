@@ -9,12 +9,12 @@
         data-aos-once="false"
         class="artists-new rounded"> 
     <form v-on:submit.prevent="submit()">
-      <h1>New Artist</h1>
+      <h1>New Events</h1>
       <ul>
         <li class="text-danger" v-for="error in errors">{{ error }}</li>
       </ul>
     <div class="form-group">
-      <label>Name:</label>
+      <label>Aritst Name:</label>
       <input type="text" class="form-control" v-model="name">
     </div>
     <div class="form-group">
@@ -22,8 +22,12 @@
       <input type="text" class="form-control" v-model="description">
     </div>
     <div class="form-group">
-      <label>Bio:</label> 
-      <input type="textarea" class="form-control" v-model="bio">
+      <label>Date:</label> 
+      <input type="date" class="form-control" v-model="date">
+    </div>
+    <div class="form-group">
+      <label>Location:</label> 
+      <input type="textarea" class="form-control" v-model="location">
     </div>
     <div class="form-group">
       <label>Image:</label> 
